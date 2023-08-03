@@ -20,6 +20,7 @@ body {
 	font-size: 1.6rem;
 }
 
+
 // nav
 .burger-btn {
 	position: fixed;
@@ -30,20 +31,20 @@ body {
 	border: 1px solid transparent;
 	cursor: pointer;
 	z-index: 1000;
-
+	
 	&:focus {
 		outline: none;
 		border: 1px solid rgba(255, 255, 255, 0.5);
 		border-radius: 8px;
 	}
-
+	
 	&:hover {
 		.burger-btn__bars::after,
 		.burger-btn__bars::before {
 			width: 100%;
 		}
 	}
-
+	
 	&__box {
 		position: relative;
 		width: 40px;
@@ -54,10 +55,10 @@ body {
 	&__bars::before {
 		@include burgerBtn;
 	}
-
+	
 	&__bars {
 		width: 100%;
-
+		
 		&::after {
 			top: 13px;
 			width: 60%;
@@ -95,7 +96,7 @@ body {
 		font-size: 2.8rem;
 		color: $pure-white;
 		text-decoration: none;
-
+		
 		&::before {
 			position: absolute;
 			top: 0;
@@ -123,8 +124,16 @@ body {
 }
 
 .nav-items-animation {
+
 	animation: navItemsAnimation 1s both;
 }
+
+.black-bars-color,
+.black-bars-color::after,
+.black-bars-color::before {
+	background-color: $dark;
+}
+
 
 // header
 .header {
@@ -418,6 +427,50 @@ body {
 	}
 }
 
+// footer
+.footer {
+	color: $pure-white;
+	background-color: $dark;
+
+	.wrapper {
+		padding: 6em 2em 2em;
+	}
+	&__box {
+		font-size: 1.4rem;
+	}
+	&__box-desktop {
+		display: none;
+	}
+	&__box-title {
+		margin-bottom: 1em;
+		font-size: 3rem;
+		text-transform: uppercase;
+	}
+	&__box-social {
+		margin: 2em 0 1em;
+	}
+	&__box-link {
+		color: $pure-white;
+		font-size: 3.6rem;
+		padding: 0 0.3em;
+		text-decoration: none;
+		transition: color 0.3s;
+
+		&:first-child {
+			padding-left: 0;
+		}
+
+		&:hover {
+			color: $light-white;
+		}
+	}
+
+	&__bottom-text {
+		padding: 2em;
+		text-align: center;
+	}
+}
+
 // media
 @media (min-width: 576px) {
 	.dreams {
@@ -525,6 +578,40 @@ body {
 		&__card {
 			margin: 1em;
 			width: 45%;
+		}
+	}
+
+	.footer {
+		&__boxes {
+			display: flex;
+			justify-content: space-between;
+		}
+
+		&__box-desktop {
+			display: block;
+		}
+
+		&__box {
+			margin: 0 2em;
+			width: 25%;
+
+			&:first-child {
+				width: 50%;
+			}
+		}
+		&__box-title {
+			font-size: 2.4rem;
+		}
+		&__box-list {
+			list-style: none;
+		}
+		&__box-list-item {
+			margin-bottom: 1em;
+
+			a {
+				color: $light-white;
+				text-decoration: none;
+			}
 		}
 	}
 }
